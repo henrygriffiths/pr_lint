@@ -6,9 +6,12 @@ on:
             - synchronize
 
 jobs:
-    publish:
+    pr_lint:
         runs-on: ubuntu-latest
+        name: pr_lint
         steps:
+            - name: pr_lint
+            id: lint
             uses: HenryGriffiths/pr_lint@v1
             with:
                 jirakey: 'JIRA'
