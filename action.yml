@@ -1,9 +1,6 @@
 name: 'PR Lint'
 description: 'Lint PR Titles'
 inputs:
-    commitlint:
-        description: 'Is commitlint enabled'
-        required: true
     jirakey:
         description: 'Jira Key'
         required: true
