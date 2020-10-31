@@ -9,6 +9,6 @@ jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-            - uses: HenryGriffiths/pr_lint@v1
-                with:
-                    jirakey: 'JIRA'    
+            uses: HenryGriffiths/pr_lint@v1
+            with:
+                jirakey: 'JIRA'
