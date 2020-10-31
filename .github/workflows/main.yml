@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         name: pr_lint
         steps:
-            - name: pr_lint
+          - name: pr_lint
             id: lint
             uses: HenryGriffiths/pr_lint@v1
             with:
