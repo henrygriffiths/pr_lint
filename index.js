@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 try {
     const issuekey = core.getInput('issuekey').toLowerCase().replace(/ /g, '')
-    const keyarr = jirakey.split(',')
+    const keyarr = issuekey.split(',')
     var passed = false
     for (let i = 0; i < keyarr.length; i++) {
         const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + keyarr[i] + '-\\d+\\s*|none)+(:)'
