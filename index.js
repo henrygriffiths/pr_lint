@@ -6,7 +6,7 @@ try {
     const keyarr = jirakey.split(',')
     var passed = false
     for (let i = 0; i < keyarr.length; i++) {
-        const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + issuekey + '-\\d+\\s*|none)+(:)'
+        const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + keyarr[i] + '-\\d+\\s*|none)+(:)'
         const regex = new RegExp(pattern)
         if (github.context.payload && github.context.payload.pull_request) {
             var title = github.context.payload.pull_request.title
