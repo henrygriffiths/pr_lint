@@ -4,15 +4,15 @@ const github = require('@actions/github');
 try {
     const issuekey = core.getInput('issuekey').toLowerCase().replace(/ /g, '')
     const keyarr = issuekey.split(',')
+    if (github.context.payload && github.context.payload.pull_request) {
+        var title = github.context.payload.pull_request.title
+        title = title.toLowerCase()
+    }
+    core.info(title)
     var passed = false
     for (let i = 0; i < keyarr.length; i++) {
         const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + keyarr[i] + '-\\d+\\s*|none)+(:)'
         const regex = new RegExp(pattern)
-        if (github.context.payload && github.context.payload.pull_request) {
-            var title = github.context.payload.pull_request.title
-            title = title.toLowerCase()
-        }
-        core.info(title)
         if (regex.test(title)) {
             passed = true
         }
