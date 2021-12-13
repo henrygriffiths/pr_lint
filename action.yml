@@ -1,8 +1,8 @@
 name: 'PR Lint'
 description: 'Lint PR Titles'
 inputs:
-    jirakey:
-        description: 'Jira Key'
+    issuekey:
+        description: 'Issue Key'
         required: true
 runs:
     using: 'node12'
