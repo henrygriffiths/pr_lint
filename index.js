@@ -6,7 +6,7 @@ try {
     const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + jirakey + '-\\d+\\s*|none)+(:)'
     const regex = new RegExp(pattern)
     if (github.context.payload && github.context.payload.pull_request) {
-        title = github.context.payload.pull_request.title
+        var title = github.context.payload.pull_request.title
         title = title.toLowerCase()
     }
     core.info(title)
