@@ -13,6 +13,6 @@ jobs:
         steps:
           - name: pr_lint
             id: lint
-            uses: HenryGriffiths/pr_lint@v1.3.1
+            uses: HenryGriffiths/pr_lint@main
             with:
                 jirakey: 'JIRA'
