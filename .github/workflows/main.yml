@@ -13,6 +13,6 @@ jobs:
         steps:
           - name: pr_lint
             id: lint
-            uses: HenryGriffiths/pr_lint@main
+            uses: HenryGriffiths/pr_lint@${{ github.head_ref }}
             with:
                 jirakey: 'JIRA'
