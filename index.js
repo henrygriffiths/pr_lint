@@ -7,6 +7,8 @@ try {
     if (github.context.payload && github.context.payload.pull_request) {
         var title = github.context.payload.pull_request.title
         title = title.toLowerCase()
+    } else {
+        core.setFailed('Could not get Pull Request Title (Action not run on a pull request?)')
     }
     core.info(title)
     var passed = false
