@@ -17,4 +17,4 @@ jobs:
             id: lint
             uses: ./
             with:
-                jirakey: 'JIRA'
+                issuekey: 'issue'
