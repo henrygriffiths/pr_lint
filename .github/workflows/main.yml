@@ -11,8 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         name: pr_lint
         steps:
+          - name: checkout
+            uses: actions/checkout@v2
           - name: pr_lint
             id: lint
-            uses: HenryGriffiths/pr_lint@main
+            uses: ./
             with:
                 jirakey: 'JIRA'
