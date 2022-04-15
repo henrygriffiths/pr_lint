@@ -18,3 +18,4 @@ jobs:
             uses: ./
             with:
                 issuekey: 'issue'
+                prtitle: 'test: issue-123: example title'
