@@ -8174,12 +8174,14 @@ const github = __nccwpck_require__(5438);
 try {
     const issuekey = core.getInput('issuekey').toLowerCase().replace(/ /g, '')
     const keyarr = issuekey.split(',')
-    if (github.context.payload && github.context.payload.pull_request) {
+    if (core.getInput('prtitle')) {
+        var title = core.getInput('prtitle')
+    } else if (github.context.payload && github.context.payload.pull_request) {
         var title = github.context.payload.pull_request.title
-        title = title.toLowerCase()
     } else {
         core.setFailed('Could not get Pull Request Title (Action not run on a pull request?)')
     }
+    title = title.toLowerCase()
     core.info(title)
     var passed = false
     for (let i = 0; i < keyarr.length; i++) {
