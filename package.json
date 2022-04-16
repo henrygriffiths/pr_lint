@@ -1,6 +1,6 @@
 {
   "name": "pr_lint",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Lint PR Titles",
   "main": "index.js",
   "scripts": {
