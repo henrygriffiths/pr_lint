@@ -8185,7 +8185,7 @@ try {
     core.info(title)
     var passed = false
     for (let i = 0; i < keyarr.length; i++) {
-        const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(.*)(:\\s)(' + keyarr[i] + '-\\d+\\s*|none)+(:)'
+        const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(\\(.*\\))*(:\\s)(' + keyarr[i] + '-\\d+*|none)+(:)'
         const regex = new RegExp(pattern)
         if (regex.test(title)) {
             passed = true
