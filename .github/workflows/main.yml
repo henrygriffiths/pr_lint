@@ -7,15 +7,115 @@ on:
             - edited
 
 jobs:
-    pr_lint:
-        runs-on: ubuntu-latest
-        name: pr_lint
-        steps:
-          - name: checkout
-            uses: actions/checkout@v2
-          - name: pr_lint
-            id: lint
-            uses: ./
-            with:
-                issuekey: 'issue'
-                prtitle: 'test: issue-123: example title'
+  pr_lint_pass:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass
+      id: pr_lint_pass
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issue-123: example title'
+
+  pr_lint_pass_nokey:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_nokey
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_nokey
+      id: pr_lint_pass_nokey
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: none: example title'
+
+  pr_lint_pass_multikey:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_multikey
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_multikey
+      id: pr_lint_pass_multikey
+      uses: ./
+      with:
+        issuekey: 'issue,bug'
+        prtitle: 'test: bug-123: issue-123: example title'
+
+  pr_lint_pass_scope:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_scope
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_scope
+      id: pr_lint_pass_scope
+      uses: ./
+      with:
+        issuekey: 'issue,bug'
+        prtitle: 'test(deps): bug-123: issue-123: example title'
+
+  pr_lint_pass_nonalpha_key:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_nonalpha_key
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_nonalpha_key
+      id: pr_lint_pass_nonalpha_key
+      uses: ./
+      with:
+        issuekey: 'issue7'
+        prtitle: 'test: issue7-123: example title'
+
+  pr_lint_fail_scope:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_scope
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_scope
+      id: pr_lint_fail_scope
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'testing: issue-123: example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_scope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_key:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_key
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_key
+      id: pr_lint_fail_key
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issues-123: example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_key.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_checktitle:
+    runs-on: ubuntu-latest
+    name: pr_lint_checktitle
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_checktitle
+      id: pr_lint_checktitle
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issue-123: example title'
