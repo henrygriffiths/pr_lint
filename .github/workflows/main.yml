@@ -56,8 +56,8 @@ jobs:
       id: pr_lint_pass_scope
       uses: ./
       with:
-        issuekey: 'issue,bug'
-        prtitle: 'test(deps): bug-123: issue-123: example title'
+        issuekey: 'issue'
+        prtitle: 'test(deps): issue-123: example title'
 
   pr_lint_pass_nonalpha_key:
     runs-on: ubuntu-latest
