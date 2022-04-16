@@ -1,10 +1,10 @@
 name: 'PR Lint'
 on:
-    pull_request:
-        types:
-            - opened
-            - synchronize
-            - edited
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - edited
 
 jobs:
   pr_lint_pass:
