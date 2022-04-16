@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const issuekey = core.getInput('issuekey').toLowerCase().replace(/ /g, '')
+    const issuekey = core.getInput('issuekey').toLowerCase().replace(/[^a-z0-9,]/g, '')
     const keyarr = issuekey.split(',')
     if (core.getInput('prtitle')) {
         var title = core.getInput('prtitle')

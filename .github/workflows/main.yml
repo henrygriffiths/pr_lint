@@ -59,6 +59,19 @@ jobs:
         issuekey: 'issue,bug'
         prtitle: 'test(deps): bug-123: issue-123: example title'
 
+  pr_lint_pass_nonalpha_key:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_nonalpha_key
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_nonalpha_key
+      id: pr_lint_pass_nonalpha_key
+      uses: ./
+      with:
+        issuekey: 'issue7'
+        prtitle: 'test: issue7-123: example title'
+
   pr_lint_fail_scope:
     runs-on: ubuntu-latest
     name: pr_lint_fail_scope
