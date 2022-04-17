@@ -44,7 +44,7 @@ jobs:
       uses: ./
       with:
         issuekey: 'issue,bug'
-        prtitle: 'test: bug-123: issue-123: example title'
+        prtitle: 'test: bug-123, issue-123: example title'
 
   pr_lint_pass_scope:
     runs-on: ubuntu-latest
