@@ -15,7 +15,7 @@ try {
     const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(\\(([\\w-]|,\\ )*\\))?(!)?(:\\ )((' + issuekeys + ')-\\d+|none)(,\\ (' + issuekeys + ')-\\d+)*(:\\ )'
     const regex = new RegExp(pattern)
     if (!regex.test(title)) {
-        core.setFailed('PR Title must follow the format: type(scope?): ' + issuekeys.toString() + '-123:. (The issue num may be repeated multiple times (comma separated) if needed).')
+        core.setFailed('PR Title must follow the format: type(scope?): ' + issuekeys.toString() + '-123:. (The issue key and num may be repeated multiple times (comma separated) if needed).')
     }
 } catch (error) {
     core.setFailed(error)
