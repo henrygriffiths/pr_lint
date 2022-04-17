@@ -85,14 +85,14 @@ jobs:
         issuekey: 'issue'
         prtitle: 'test(deps-dev): issue-123: example title'
 
-  pr_lint_fail_scope:
+  pr_lint_fail_type:
     runs-on: ubuntu-latest
-    name: pr_lint_fail_scope
+    name: pr_lint_fail_type
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    - name: pr_lint_fail_scope
-      id: pr_lint_fail_scope
+    - name: pr_lint_fail_type
+      id: pr_lint_fail_type
       continue-on-error: true
       uses: ./
       with:
@@ -100,16 +100,16 @@ jobs:
         prtitle: 'testing: issue-123: example title'
     - name: Invert Status
       run: |
-        if [[ ${{ steps.pr_lint_fail_scope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+        if [[ ${{ steps.pr_lint_fail_type.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
-  pr_lint_fail_multiscope:
+  pr_lint_fail_multitype:
     runs-on: ubuntu-latest
-    name: pr_lint_fail_multiscope
+    name: pr_lint_fail_multitype
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    - name: pr_lint_fail_multiscope
-      id: pr_lint_fail_multiscope
+    - name: pr_lint_fail_multitype
+      id: pr_lint_fail_multitype
       continue-on-error: true
       uses: ./
       with:
@@ -117,7 +117,7 @@ jobs:
         prtitle: 'feat: test: issue-123: example title'
     - name: Invert Status
       run: |
-        if [[ ${{ steps.pr_lint_fail_multiscope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+        if [[ ${{ steps.pr_lint_fail_multitype.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
   pr_lint_fail_key:
     runs-on: ubuntu-latest
