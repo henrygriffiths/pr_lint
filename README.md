@@ -9,7 +9,7 @@ Multiple issue keys: `fix(deps): issue-123, key-1234: fixing deps`
 
 # Usage
 ```yaml
-- uses: henrygriffiths/pr_lint@latest
+- uses: henrygriffiths/pr_lint@v2
   with:
     # Required
     # Issue Key used in project management system
