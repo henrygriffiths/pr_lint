@@ -85,6 +85,19 @@ jobs:
         issuekey: 'issue'
         prtitle: 'test(deps-dev): issue-123: example title'
 
+  pr_lint_pass_multiscope:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_multiscope
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_multiscope
+      id: pr_lint_pass_multiscope
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test(deps,docs): issue-123: example title'
+
   pr_lint_fail_type:
     runs-on: ubuntu-latest
     name: pr_lint_fail_type
@@ -152,6 +165,23 @@ jobs:
     - name: Invert Status
       run: |
         if [[ ${{ steps.pr_lint_fail_nonalpha_scope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_multiscope:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_multiscope
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_multiscope
+      id: pr_lint_fail_multiscope
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test(deps)(docs): issue-123: example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_multiscope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
   pr_lint_checktitle:
     runs-on: ubuntu-latest
