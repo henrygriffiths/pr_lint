@@ -196,6 +196,40 @@ jobs:
       run: |
         if [[ ${{ steps.pr_lint_fail_multiscope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
+  pr_lint_fail_space:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_space
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_space
+      id: pr_lint_fail_space
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test:issue-123: example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_space.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_trailingspace:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_trailingspace
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_trailingspace
+      id: pr_lint_fail_trailingspace
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issue-123:example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_trailingspace.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
   pr_lint_checktitle:
     runs-on: ubuntu-latest
     name: pr_lint_checktitle
