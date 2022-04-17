@@ -1,5 +1,8 @@
 name: 'PR Lint'
 description: 'Lint PR Titles'
+branding:
+    icon: chevron-right
+    color: blue
 inputs:
     issuekey:
         description: 'Issue Key'
