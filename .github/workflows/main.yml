@@ -98,6 +98,19 @@ jobs:
         issuekey: 'issue'
         prtitle: 'test(deps,docs): issue-123: example title'
 
+  pr_lint_pass_breakingchange:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_breakingchange
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_breakingchange
+      id: pr_lint_pass_breakingchange
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test!: issue-123: example title'
+
   pr_lint_fail_type:
     runs-on: ubuntu-latest
     name: pr_lint_fail_type
