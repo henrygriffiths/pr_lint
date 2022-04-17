@@ -1,7 +1,11 @@
 # PR Lint
 This action makes sure PR titles are linted with commitlint and project management issue keys
 
-Example: `fix(deps): issue-123: fixing deps`
+Examples:
+
+One issue key: `fix(deps): issue-123: fixing deps`
+
+Multiple issue keys: `fix(deps): issue-123, key-1234: fixing deps`
 
 # Usage
 ```yaml
