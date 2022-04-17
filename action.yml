@@ -1,5 +1,6 @@
 name: 'PR Lint'
 description: 'Lint PR Titles'
+author: 'henrygriffiths'
 branding:
     icon: chevron-right
     color: blue
