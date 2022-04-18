@@ -8472,7 +8472,7 @@ const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
 
 try {
-    const issuekeys = core.getInput('issuekey').toLowerCase().replace(/[^a-z0-9,]/g, '').replace(',', '|')
+    const issuekeys = core.getInput('issuekey').toLowerCase().replace(/[^a-z0-9,]/g, '').replace(/[,]/g, '|')
     if (core.getInput('prtitle')) {
         var title = core.getInput('prtitle')
     } else if (github.context.payload && github.context.payload.pull_request) {

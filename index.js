@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const issuekeys = core.getInput('issuekey').toLowerCase().replace(/[^a-z0-9,]/g, '').replace(',', '|')
+    const issuekeys = core.getInput('issuekey').toLowerCase().replace(/[^a-z0-9,]/g, '').replace(/[,]/g, '|')
     if (core.getInput('prtitle')) {
         var title = core.getInput('prtitle')
     } else if (github.context.payload && github.context.payload.pull_request) {
