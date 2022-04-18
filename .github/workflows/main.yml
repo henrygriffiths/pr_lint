@@ -46,6 +46,19 @@ jobs:
         issuekey: 'issue,bug'
         prtitle: 'test: bug-123, issue-123: example title'
 
+  pr_lint_pass_multimultikey:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_multimultikey
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_multimultikey
+      id: pr_lint_pass_multimultikey
+      uses: ./
+      with:
+        issuekey: 'issue,bug,key'
+        prtitle: 'test: bug-123, issue-123, key-123: example title'
+
   pr_lint_pass_scope:
     runs-on: ubuntu-latest
     name: pr_lint_pass_scope
