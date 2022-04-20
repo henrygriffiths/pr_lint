@@ -260,6 +260,23 @@ jobs:
       run: |
         if [[ ${{ steps.pr_lint_fail_multiscope_comma.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
+  pr_lint_fail_emptyscope:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_emptyscope
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_emptyscope
+      id: pr_lint_fail_emptyscope
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test(): issue-123: example title'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_emptyscope.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
   pr_lint_fail_space:
     runs-on: ubuntu-latest
     name: pr_lint_fail_space
