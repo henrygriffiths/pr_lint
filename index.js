@@ -10,9 +10,14 @@ try {
     } else {
         core.setFailed('Could not get Pull Request Title (Action not run on a pull request?)')
     }
+    if (core.getInput('types')) {
+        var types = core.getInput('types').toLowerCase().replace(/[|]/g, '').replace(/[,]/g, '|')
+    } else {
+        var types = 'build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test'
+    }
     title = title.toLowerCase()
     core.info(title)
-    const pattern = '^(build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test)(\\(([\\w-]|,\\ )+\\))?(!)?(:\\ )((' + issuekeys + ')-\\d+|none)(,\\ (' + issuekeys + ')-\\d+)*(:\\ )'
+    const pattern = '^(' + types + ')(\\(([\\w-]|,\\ )+\\))?(!)?(:\\ )((' + issuekeys + ')-\\d+|none)(,\\ (' + issuekeys + ')-\\d+)*(:\\ )'
     const regex = new RegExp(pattern)
     if (!regex.test(title)) {
         core.setFailed('PR Title must follow the format: type(scope?): ' + issuekeys.toString() + '-123:. (The issue key and num may be repeated multiple times (comma separated) if needed).')

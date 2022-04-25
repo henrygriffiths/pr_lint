@@ -124,6 +124,20 @@ jobs:
         issuekey: 'issue'
         prtitle: 'test!: issue-123: example title'
 
+  pr_lint_pass_manualtype:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_manualtype
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_pass_manualtype
+      id: pr_lint_pass_manualtype
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issue-123: example title'
+        types: 'feat,ci,test'
+
   pr_lint_fail_type:
     runs-on: ubuntu-latest
     name: pr_lint_fail_type
@@ -310,6 +324,24 @@ jobs:
     - name: Invert Status
       run: |
         if [[ ${{ steps.pr_lint_fail_trailingspace.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_manualtype:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_manualtype
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: pr_lint_fail_manualtype
+      id: pr_lint_fail_manualtype
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: issue-123: example title'
+        types: 'ci,build,docs'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_manualtype.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
   pr_lint_checktitle:
     runs-on: ubuntu-latest

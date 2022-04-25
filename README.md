@@ -20,6 +20,11 @@ Multiple issue keys: `fix(deps): issue-123, key-1234: fixing deps`
     # Manually provide PR title via actions
     # Default: ${{ github.event.pull_request.title }}
     prtitle: ''
+    
+    # Optional
+    # Manually provide types (comma separated)
+    # Default: 'build,ci,chore,docs,feat,fix,perf,refactor,revert,style,task,test'
+    types: ''
 ```
 
 
