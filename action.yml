@@ -11,6 +11,9 @@ inputs:
     prtitle:
         description: 'PR Title'
         required: false
+    types:
+        description: 'Lint Types'
+        required: false
 runs:
     using: 'node16'
     main: './dist/index.js'
