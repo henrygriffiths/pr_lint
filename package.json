@@ -19,7 +19,7 @@
   "homepage": "https://github.com/HenryGriffiths/pr_lint#readme",
   "dependencies": {
     "@actions/core": "1.8.1",
-    "@actions/github": "5.0.1"
+    "@actions/github": "5.0.2"
   },
   "devDependencies": {
     "@vercel/ncc": "0.33.4"
