@@ -8877,9 +8877,19 @@ try {
     } else {
         var types = 'build|ci|chore|docs|feat|fix|perf|refactor|revert|style|task|test'
     }
+    if (core.getInput('allownokey')) {
+        var allownokey = core.getBooleanInput('allownokey')
+    } else {
+        var allownokey = true
+    }
+    if (allownokey) {
+        var allownokeyregex = '|none'
+    } else {
+        var allownokeyregex = ''
+    }
     title = title.toLowerCase()
     core.info(title)
-    const pattern = '^(' + types + ')(\\(([\\w-]|,\\ )+\\))?(!)?(:\\ )((' + issuekeys + ')-\\d+|none)(,\\ (' + issuekeys + ')-\\d+)*(:\\ )'
+    const pattern = '^(' + types + ')(\\(([\\w-]|,\\ )+\\))?(!)?(:\\ )((' + issuekeys + ')-\\d+' + allownokeyregex + ')(,\\ (' + issuekeys + ')-\\d+)*(:\\ )'
     const regex = new RegExp(pattern)
     if (!regex.test(title)) {
         core.setFailed('PR Title must follow the format: type(scope?): ' + issuekeys.toString() + '-123:. (The issue key and num may be repeated multiple times (comma separated) if needed).')

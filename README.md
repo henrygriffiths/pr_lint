@@ -25,6 +25,11 @@ Multiple issue keys: `fix(deps): issue-123, key-1234: fixing deps`
     # Manually provide types (comma separated)
     # Default: 'build,ci,chore,docs,feat,fix,perf,refactor,revert,style,task,test'
     types: ''
+    
+    # Optional
+    # Allow linting to pass when no issue key is provided
+    # Default: true
+    allownokey: true
 ```
 
 

@@ -33,6 +33,20 @@ jobs:
         issuekey: 'issue'
         prtitle: 'test: none: example title'
 
+  pr_lint_pass_nokey_allownokey:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_nokey_allownokey
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pr_lint_pass_nokey_allownokey
+      id: pr_lint_pass_nokey_allownokey
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: none: example title'
+        allownokey: true
+
   pr_lint_pass_multikey:
     runs-on: ubuntu-latest
     name: pr_lint_pass_multikey
@@ -342,6 +356,24 @@ jobs:
     - name: Invert Status
       run: |
         if [[ ${{ steps.pr_lint_fail_manualtype.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_nokey_allownokey:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_nokey_allownokey
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pr_lint_fail_nokey_allownokey
+      id: pr_lint_fail_nokey_allownokey
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: none: example title'
+        allownokey: false
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_nokey_allownokey.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
   pr_lint_checktitle:
     runs-on: ubuntu-latest
