@@ -20,8 +20,13 @@ try {
     } else {
         var allownokey = true
     }
+    if (core.getInput('nokeyword')) {
+        var nokeyword = core.getInput('nokeyword').toLowerCase().replace(/[^a-z]/g, '')
+    } else {
+        var nokeyword = 'none'
+    }
     if (allownokey) {
-        var allownokeyregex = '|none'
+        var allownokeyregex = '|' + nokeyword
     } else {
         var allownokeyregex = ''
     }
