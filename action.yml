@@ -18,6 +18,10 @@ inputs:
         description: 'Allow No Issue Key'
         required: false
         default: true
+    nokeyword:
+        description: 'No Issue Key Word'
+        required: false
+        default: 'none'
 runs:
     using: 'node16'
     main: './dist/index.js'

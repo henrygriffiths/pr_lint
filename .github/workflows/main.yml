@@ -47,6 +47,20 @@ jobs:
         prtitle: 'test: none: example title'
         allownokey: true
 
+  pr_lint_pass_nokey_nokeyword:
+    runs-on: ubuntu-latest
+    name: pr_lint_pass_nokey_nokeyword
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pr_lint_pass_nokey_nokeyword
+      id: pr_lint_pass_nokey_nokeyword
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: nada: example title'
+        nokeyword: 'nada'
+
   pr_lint_pass_multikey:
     runs-on: ubuntu-latest
     name: pr_lint_pass_multikey
@@ -374,6 +388,42 @@ jobs:
     - name: Invert Status
       run: |
         if [[ ${{ steps.pr_lint_fail_nokey_allownokey.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_nokeyword:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_nokeyword
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pr_lint_fail_nokeyword
+      id: pr_lint_fail_nokeyword
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: none: example title'
+        nokeyword: 'invalid'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_nokeyword.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
+
+  pr_lint_fail_nokeyword_regex:
+    runs-on: ubuntu-latest
+    name: pr_lint_fail_nokeyword_regex
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: pr_lint_fail_nokeyword_regex
+      id: pr_lint_fail_nokeyword_regex
+      continue-on-error: true
+      uses: ./
+      with:
+        issuekey: 'issue'
+        prtitle: 'test: invalid 0: example title'
+        nokeyword_regex: 'invalid 0'
+    - name: Invert Status
+      run: |
+        if [[ ${{ steps.pr_lint_fail_nokeyword_regex.outcome }} == "failure" ]]; then exit 0; else exit 1; fi
 
   pr_lint_checktitle:
     runs-on: ubuntu-latest

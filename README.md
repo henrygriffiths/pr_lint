@@ -30,6 +30,11 @@ Multiple issue keys: `fix(deps): issue-123, key-1234: fixing deps`
     # Allow linting to pass when no issue key is provided
     # Default: true
     allownokey: true
+    
+    # Optional
+    # Word used when no issue key is provided
+    # Default: none
+    nokeyword: ''
 ```
 
 
