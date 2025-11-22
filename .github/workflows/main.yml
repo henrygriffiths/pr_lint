@@ -12,7 +12,7 @@ jobs:
     name: pr_lint_pass
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass
       id: pr_lint_pass
       uses: ./
@@ -25,7 +25,7 @@ jobs:
     name: pr_lint_pass_nokey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_nokey
       id: pr_lint_pass_nokey
       uses: ./
@@ -38,7 +38,7 @@ jobs:
     name: pr_lint_pass_nokey_allownokey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_nokey_allownokey
       id: pr_lint_pass_nokey_allownokey
       uses: ./
@@ -52,7 +52,7 @@ jobs:
     name: pr_lint_pass_nokey_nokeyword
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_nokey_nokeyword
       id: pr_lint_pass_nokey_nokeyword
       uses: ./
@@ -66,7 +66,7 @@ jobs:
     name: pr_lint_pass_multikey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_multikey
       id: pr_lint_pass_multikey
       uses: ./
@@ -79,7 +79,7 @@ jobs:
     name: pr_lint_pass_multimultikey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_multimultikey
       id: pr_lint_pass_multimultikey
       uses: ./
@@ -92,7 +92,7 @@ jobs:
     name: pr_lint_pass_scope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_scope
       id: pr_lint_pass_scope
       uses: ./
@@ -105,7 +105,7 @@ jobs:
     name: pr_lint_pass_nonalpha_key
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_nonalpha_key
       id: pr_lint_pass_nonalpha_key
       uses: ./
@@ -118,7 +118,7 @@ jobs:
     name: pr_lint_pass_nonalpha_scope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_nonalpha_scope
       id: pr_lint_pass_nonalpha_scope
       uses: ./
@@ -131,7 +131,7 @@ jobs:
     name: pr_lint_pass_multiscope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_multiscope
       id: pr_lint_pass_multiscope
       uses: ./
@@ -144,7 +144,7 @@ jobs:
     name: pr_lint_pass_breakingchange
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_breakingchange
       id: pr_lint_pass_breakingchange
       uses: ./
@@ -157,7 +157,7 @@ jobs:
     name: pr_lint_pass_manualtype
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_pass_manualtype
       id: pr_lint_pass_manualtype
       uses: ./
@@ -171,7 +171,7 @@ jobs:
     name: pr_lint_fail_type
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_type
       id: pr_lint_fail_type
       continue-on-error: true
@@ -188,7 +188,7 @@ jobs:
     name: pr_lint_fail_multitype
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_multitype
       id: pr_lint_fail_multitype
       continue-on-error: true
@@ -205,7 +205,7 @@ jobs:
     name: pr_lint_fail_key
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_key
       id: pr_lint_fail_key
       continue-on-error: true
@@ -222,7 +222,7 @@ jobs:
     name: pr_lint_fail_multikey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_multikey
       id: pr_lint_fail_multikey
       continue-on-error: true
@@ -239,7 +239,7 @@ jobs:
     name: pr_lint_fail_multikey_spacing
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_multikey_spacing
       id: pr_lint_fail_multikey_spacing
       continue-on-error: true
@@ -256,7 +256,7 @@ jobs:
     name: pr_lint_fail_nonalpha_scope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_nonalpha_scope
       id: pr_lint_fail_nonalpha_scope
       continue-on-error: true
@@ -273,7 +273,7 @@ jobs:
     name: pr_lint_fail_multiscope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_multiscope
       id: pr_lint_fail_multiscope
       continue-on-error: true
@@ -290,7 +290,7 @@ jobs:
     name: pr_lint_fail_multiscope_comma
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_multiscope_comma
       id: pr_lint_fail_multiscope_comma
       continue-on-error: true
@@ -307,7 +307,7 @@ jobs:
     name: pr_lint_fail_emptyscope
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_emptyscope
       id: pr_lint_fail_emptyscope
       continue-on-error: true
@@ -324,7 +324,7 @@ jobs:
     name: pr_lint_fail_space
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_space
       id: pr_lint_fail_space
       continue-on-error: true
@@ -341,7 +341,7 @@ jobs:
     name: pr_lint_fail_trailingspace
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_trailingspace
       id: pr_lint_fail_trailingspace
       continue-on-error: true
@@ -358,7 +358,7 @@ jobs:
     name: pr_lint_fail_manualtype
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_manualtype
       id: pr_lint_fail_manualtype
       continue-on-error: true
@@ -376,7 +376,7 @@ jobs:
     name: pr_lint_fail_nokey_allownokey
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_nokey_allownokey
       id: pr_lint_fail_nokey_allownokey
       continue-on-error: true
@@ -394,7 +394,7 @@ jobs:
     name: pr_lint_fail_nokeyword
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_nokeyword
       id: pr_lint_fail_nokeyword
       continue-on-error: true
@@ -412,7 +412,7 @@ jobs:
     name: pr_lint_fail_nokeyword_regex
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_fail_nokeyword_regex
       id: pr_lint_fail_nokeyword_regex
       continue-on-error: true
@@ -430,7 +430,7 @@ jobs:
     name: pr_lint_checktitle
     steps:
     - name: checkout
-      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
     - name: pr_lint_checktitle
       id: pr_lint_checktitle
       continue-on-error: true
