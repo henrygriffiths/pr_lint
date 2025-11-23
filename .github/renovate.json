@@ -64,6 +64,9 @@
   "schedule": [
     "at any time"
   ],
+  "vulnerabilityAlerts": {
+    "dependencyDashboardApproval": true
+  },
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Dependency Updates",
   "dependencyDashboardApproval": true,
